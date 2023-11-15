@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+
+import ruMessages from "devextreme/localization/messages/ru.json";
+import {loadMessages, locale} from "devextreme/localization";
+
 
 @Component({
   selector: 'app-root',
@@ -11,4 +15,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'CreateDiagramDevExtreme';
+
+  constructor() {
+    loadMessages(ruMessages);
+    locale(navigator.language);
+  }
 }
