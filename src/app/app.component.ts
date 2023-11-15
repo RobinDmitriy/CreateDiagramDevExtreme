@@ -4,12 +4,13 @@ import {RouterOutlet} from '@angular/router';
 
 import ruMessages from "devextreme/localization/messages/ru.json";
 import {loadMessages, locale} from "devextreme/localization";
+import {DiagramComponent} from "./diagram/diagram.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, DiagramComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
