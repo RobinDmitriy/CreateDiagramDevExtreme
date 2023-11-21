@@ -1,4 +1,41 @@
 <dx-diagram #diagram
+            (onCustomCommand)="onCustomCommand($event)"
             [fullScreen]="true"
             id="diagram"
-></dx-diagram>
+>
+  <dxo-history-toolbar [visible]="false"></dxo-history-toolbar>
+  <dxo-main-toolbar [visible]="true">
+    <dxi-command name="undo"></dxi-command>
+    <dxi-command name="redo"></dxi-command>
+    <dxi-command name="separator"></dxi-command>
+    <dxi-command name="fontName"></dxi-command>
+    <dxi-command name="fontSize"></dxi-command>
+    <dxi-command name="separator"></dxi-command>
+    <dxi-command name="bold"></dxi-command>
+    <dxi-command name="italic"></dxi-command>
+    <dxi-command name="underline"></dxi-command>
+    <dxi-command name="separator"></dxi-command>
+    <dxi-command name="fontColor"></dxi-command>
+    <dxi-command name="lineColor"></dxi-command>
+    <dxi-command name="fillColor"></dxi-command>
+    <dxi-command name="separator"></dxi-command>
+    <dxi-command icon="import"
+                 id="load-diagram"
+                 name="load"
+                 text="Загрузить диаграмму"
+    ></dxi-command>
+    <dxi-command icon="save"
+                 name="save"
+                 text="Сохранить диаграмму"
+    ></dxi-command>
+  </dxo-main-toolbar>
+</dx-diagram>
+
+<!--<dx-file-uploader #fileUploader-->
+<!--                  [allowedFileExtensions]="['.json']"-->
+<!--                  [multiple]="false"-->
+<!--                  [visible]="false"-->
+<!--                  accept=".json"-->
+<!--                  dialogTrigger="#load-diagram"-->
+<!--                  uploadMode="instantly"-->
+<!--&gt;</dx-file-uploader>-->
